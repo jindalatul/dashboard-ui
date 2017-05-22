@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tests</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="http://cdn-geoweb.s3.amazonaws.com/terraformer/1.0.5/terraformer.min.js"></script>
+  <script src="http://cdn-geoweb.s3.amazonaws.com/terraformer-arcgis-parser/1.0.4/terraformer-arcgis-parser.min.js"></script>
+  <script src="citysdk.js"></script>
+  <script src="census.citysdk.js"></script>
+</head>
+<body>
+<div id="rawOutput"></div>
+<script>
+/*
+https://factfinder.census.gov/faces/nav/jsf/pages/community_facts.xhtml?src=bkmk#
+
+https://uscensusbureau.github.io/citysdk/developers/aliases/
+
+https://uscensusbureau.github.io/citysdk/developers/queryBuilder/
+
+API KEY = 88c69cd2d93fae30723c3ec3546d66521f339255
+
+*/
+  var citysdk = new CitySdk();
+  var census = new CensusModule("88c69cd2d93fae30723c3ec3546d66521f339255");
+
+  console.log(citysdk);
+  console.log(census);
+  
+  var request = {
+    "level": "state",
+    "zip": "80015",
+    "variables": [
+        "age",
+        "employment_employed",
+        "employment_unemployed",
+        "income",
+        "income_per_capita",
+        "median_female_age",
+        "median_male_age",
+        "population",
+        "poverty"
+    ],
+    "api": "acs5",
+    "year": "2014"
+};
+
+       census.apiRequest(request, function (response) {
+
+        jQuery("#rawOutput").append(JSON.stringify(response));
+
+        });
+</script>
+</body>
+</html>
+

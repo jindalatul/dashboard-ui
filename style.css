@@ -1,0 +1,130 @@
+#map 
+{
+  height: 100%;
+}
+html, body
+{
+        height: 100%;
+        margin: 0;
+        padding: 0;
+}
+
+.navbar
+{
+	position:fixed;
+	display:block;
+	z-index:1004;
+	width:100%;
+	border-radius:0px;
+	margin-bottom:0px;
+}
+
+.pac-container
+{
+	z-index:1010; /* needs max z-index; */
+}
+
+.input-group
+{
+	width:700px;
+}
+.navigation-side
+{
+	padding-top:150px;
+	width:60px;
+	height:100%;
+	float:left;
+	z-index:1100; 
+	background-color:green;
+}
+
+.navigation-side a i
+{
+	z-index:1120;
+	padding:10px;
+	color:white;	
+}
+
+#map
+{
+	margin:0px;
+	padding:0px;
+}
+
+.range-picker
+{
+	float:right; 
+	right:20px; 
+	top:70px; 
+	z-index:1033;
+	position:fixed;
+}
+#myRange
+{
+	width:190px;
+}
+#info-box
+{
+background-color:grey;
+width:200px;
+height:50px;
+z-index:1003;
+position:fixed;
+top:120px;
+right:10px;
+float:right;
+}
+.expand-link,.expand-link:hover
+{
+	padding-top:10px;
+	padding-right:20px;
+	float:right;
+	text-decoration:none;
+	color:white;
+	font-size:18px;
+}
+
+.menu {
+	overflow: hidden;
+    transition: all linear 0.3s;
+    background-color:grey;
+	width:200px;
+	padding:10px 5px 0px 5px;
+	height: 550px;
+}
+
+.ng-hide {
+	height: 0;
+}
+
+.icon
+{
+float:left;
+}
+
+.material-icons.md-18 { font-size: 18px; color:#FFFF;}
+.material-icons.md-24 { font-size: 24px; color:#FFFF; }
+
+.menu ul
+{
+	list-style:none;
+	padding-left: 20px;
+}
+.menu ul li
+{
+	clear:left;
+}
+
+.menu ul li .text
+ {
+    float: left;
+    font-size: 15px;
+    height: 30px;
+    margin: 3px 0px 3px 8px;
+}
+.shareable
+{
+    float: right;
+    padding-top: 10px;
+    width: 80px;
+}
