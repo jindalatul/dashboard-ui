@@ -7,10 +7,10 @@
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="style.css">
-</head>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
 <body ng-app="myApp">
 <nav class="navbar navbar-inverse">
 
@@ -40,21 +40,21 @@
 </nav>
 <div class="navigation-side">
 
-		<a href="#" title="Businesses Demographics">
+		<a href="index.html" title="Businesses Demographics">
 			<i class="material-icons md-24">place</i>
 		</a>
 		
-		<a href="#" title="Population Demographics">
+		<a href="demographics.html" title="Demographics">
 			<i class="material-icons md-24">group</i>
 		</a>
-			
-		<a href="#" title="Education Demographics">
-			<i class="material-icons md-24">school</i>
-		</a>	
 		
-		<a href="#" title="Income Demographics">
+		<a href="income.html" title="Income">
 			<i class="material-icons md-24">attach_money</i>
-		</a>		
+		</a>
+		
+		<a href="education.html" title="Education">
+			<i class="material-icons md-24">school</i>
+		</a>				
 		
 		<a href="#" title="Network and Internet usage">
 			<i class="material-icons md-24">speaker_phone</i>
@@ -187,6 +187,9 @@
 </div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHPjFkr_c36i3fhxIr8TJ2UrlUHE_ebLA&libraries=places"></script>
 <script>
+
+// cost of living index
+
 var app = angular.module('myApp', ['ngAnimate']);
 
 app.controller('mapCtrl', function($scope, $http) {
@@ -257,12 +260,12 @@ app.controller('mapCtrl', function($scope, $http) {
           type: ['store']
         };
         $scope.service.radarSearch(request, callback);
-		alert("performSearch");
+		//alert("performSearch");
 	}
   
     function callback(results, status) 
 	{
-		alert(results.length);
+		//alert(results.length);
         if (status !== google.maps.places.PlacesServiceStatus.OK) {
           console.error(status);
           return;
